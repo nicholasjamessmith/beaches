@@ -1,4 +1,5 @@
 # Beaches
+Beaches is a digital travel catalog that lets users search for, learn more about, and apply to visit (simulated) beach towns throughout the United States.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
