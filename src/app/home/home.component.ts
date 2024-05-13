@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'
+import { BeachLocationComponent } from '../beach-location/beach-location.component'
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, BeachLocationComponent],
   template: `
     <section>
       <form>
         <input type="text" placeholder="Filter by state" />
         <button class="primary" type="button">Search</button>
       </form>
+    </section>
+    <section class="results">
+      <app-beach-location></app-beach-location>
     </section>
   `,
   //templateUrl: './home.component.html',
