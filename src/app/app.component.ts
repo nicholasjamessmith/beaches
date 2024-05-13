@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component'
         <img class="logo" src="assets/home-beach.png" alt="logo" aria-hidden="true" />
       </header>
         <section class="content">
-          <h1>Hello, World!</h1>
+          <app-home></app-home>
         </section>
     </main>
   `,
