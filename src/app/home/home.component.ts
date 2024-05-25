@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'
-import { BeachLocationComponent } from '../beach-location/beach-location.component'
+import { CommonModule } from '@angular/common';
+import { BeachLocationComponent } from '../beach-location/beach-location.component';
+import { BeachLocation } from '../beachlocation';
 
 
 @Component({
@@ -60,5 +61,11 @@ import { BeachLocationComponent } from '../beach-location/beach-location.compone
     `
 })
 export class HomeComponent {
-
+  beachLocation: BeachLocation = {
+    rank: 1,
+    name: 'Indian Wells Beach',
+    state: 'New York',
+    photo: 'indianwells.svg',
+    easyAccess: true
+  };
 }
