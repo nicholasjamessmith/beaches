@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+//CommonModule import?
+import { BeachLocation } from '../beachlocation';
 
 @Component({
   selector: 'app-beach-location',
@@ -43,5 +45,7 @@ import { Component } from '@angular/core';
   `
 })
 export class BeachLocationComponent {
-
+  //Input syntax note: you have to add the ! because the input is expecting the value to be passed. In this case, there is no default value. In our example application case we know that the value will be passed in - this is by design. The exclamation point is called the non-null assertion operatore and itr tells the TypeScript compiler tha tthe value of this property won't be null or undefined.
+  //Challenge: Refactor all @Input()s to Signal Inputs after completing app
+  @Input() beachLocation!: BeachLocation
 }
