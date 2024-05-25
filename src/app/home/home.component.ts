@@ -16,7 +16,7 @@ import { BeachLocation } from '../beachlocation';
       </form>
     </section>
     <section class="results">
-      <app-beach-location></app-beach-location>
+      <app-beach-location [beachLocation]="beachLocation"></app-beach-location>
     </section>
   `,
   //templateUrl: './home.component.html',
