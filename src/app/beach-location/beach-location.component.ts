@@ -9,7 +9,18 @@ import { BeachLocation } from '../beachlocation';
   //templateUrl: './beach-location.component.html',
   //styleUrl: './beach-location.component.css',\
   template: `
-    <h1>Beach Locations Go Here</h1>
+   <section class="beach">
+    <img
+      class="beach-photo"
+      [src]="beachLocation.photo"
+      alt="Photo of {{beachLocation.name}}"
+      crossorigin
+      />
+    <h1> I testing 1 2 3 A a E e I i O o U u Y y 1 2 3 4 </h1>
+    <h2> Indian Wells Beach </h2>
+    <h1 class="beach-rank">{{ beachLocation.rank}}</h1>
+    <h2 class="beach-heading">{{ beachLocation.name }}</h2>
+   </section>
   `,
   styles: `
     .listing {
