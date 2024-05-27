@@ -16,13 +16,16 @@ import { BeachLocation } from '../beachlocation';
       alt="Photo of {{beachLocation.name}}"
       crossorigin
       />
-    <h1> I testing 1 2 3 A a E e I i O o U u Y y 1 2 3 4 </h1>
-    <h2> Indian Wells Beach </h2>
     <h1 class="beach-rank">{{ beachLocation.rank}}</h1>
     <h2 class="beach-heading">{{ beachLocation.name }}</h2>
    </section>
   `,
   styles: `
+    .beach-photo {
+      max-width: 600px;
+      max-height: 400px;
+    }
+/*
     .listing {
       background: var(--accent-color);
       border-radius: 30px;
@@ -52,7 +55,8 @@ import { BeachLocation } from '../beachlocation';
     section.listing a::after {
       content: "\x83";
       margin-left: 5px;
-    }   
+    }
+*/
   `
 })
 export class BeachLocationComponent {

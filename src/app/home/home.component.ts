@@ -16,7 +16,9 @@ import { BeachLocation } from '../beachlocation';
       </form>
     </section>
     <section class="results">
-      <app-beach-location [beachLocation]="beachLocation"></app-beach-location>
+      <app-beach-location
+        *ngFor="let beachLocation of beachLocationList" [beachLocation]="beachLocation">
+      </app-beach-location>
     </section>
   `,
   //templateUrl: './home.component.html',
@@ -26,7 +28,7 @@ import { BeachLocation } from '../beachlocation';
       display: grid;
       column-gap: 14px;
       row-gap: 14px;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+      grid-template-columns: repeat(auto-fill, minmax(600px, 600px));
       margin-top: 50px;
       justify-content: space-around;
     }
@@ -57,15 +59,74 @@ import { BeachLocation } from '../beachlocation';
     .results {
         grid-template-columns: 1fr;
     }    
-  }  
+  }
     `
+
 })
 export class HomeComponent {
-  beachLocation: BeachLocation = {
-    rank: 1,
-    name: 'Indian Wells Beach',
-    state: 'New York',
-    photo: 'indianwells.svg',
-    easyAccess: true
-  };
+  beachLocationList: BeachLocation[] = [
+    {
+      rank: 1,
+      name: 'Indian Wells Beach',
+      state: 'New York',
+      photo: '../assets/beaches/indianwells.png',
+      easyAccess: true
+    },
+    {
+      rank: 2,
+      name: 'Ocracoke Beach',
+      state: 'North Carolina',
+      photo: '../assets/beaches/ocracoke.png',
+      easyAccess: true
+    },
+    {
+      rank: 3,
+      name: 'Newport Beach',
+      state: 'California',
+      photo: '../assets/beaches/newport-beach.png',
+      easyAccess: true
+    },
+    {
+      rank: 4,
+      name: 'Huntington Beach',
+      state: 'California',
+      photo: '../assets/beaches/huntington-beach.png',
+      easyAccess: true
+    },
+    {
+      rank: 5,
+      name: 'Waikiki Beach',
+      state: 'Hawaii',
+      photo: '../assets/beaches/waikiki-beach.png',
+      easyAccess: true
+    },
+    {
+      rank: 6,
+      name: 'Bayhead',
+      state: 'New Jersey',
+      photo: '../assets/beaches/bayhead2.png',
+      easyAccess: true
+    },
+    {
+      rank: 7,
+      name: 'Big Sur',
+      state: 'California',
+      photo: '../assets/beaches/big-sur.png',
+      easyAccess: false
+    },
+    {
+      rank: 8,
+      name: 'Rockaway Beach',
+      state: 'New York',
+      photo: '../assets/beaches/rockaway.png',
+      easyAccess: true
+    },
+    {
+      rank: 9,
+      name: 'Clearwater Beach',
+      state: 'Florida',
+      photo: '../assets/beaches/clearwater.png',
+      easyAccess: true
+    },
+  ]
 }

@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component'
   template: `
     <main>
       <header>
-        <img class="logo" src="assets/home-beach.png" alt="logo" aria-hidden="true" />
+        <img class="logo" src="assets/logo.png" alt="logo" aria-hidden="true" />
       </header>
         <section class="content">
           <app-home></app-home>
