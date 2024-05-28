@@ -21,9 +21,14 @@ import { BeachLocation } from '../beachlocation';
    </section>
   `,
   styles: `
+    .beach {
+      border: 2px solid black;
+      border-radius: 4px;
+      padding: 12px;
+    }
     .beach-photo {
-      max-width: 600px;
-      max-height: 400px;
+      max-width: 100%;
+      max-height: 100%;
     }
 /*
     .listing {
