@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
-//CommonModule import?
+import { CommonModule } from '@angular/common'
 import { BeachLocation } from '../beachlocation';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-beach-location',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterModule],
   //templateUrl: './beach-location.component.html',
   //styleUrl: './beach-location.component.css',\
   template: `
@@ -18,6 +19,7 @@ import { BeachLocation } from '../beachlocation';
       />
     <h1 class="beach-rank">{{ beachLocation.rank}}</h1>
     <h2 class="beach-heading">{{ beachLocation.name }}</h2>
+    <a [routerLink]="['/details', beachLocation.rank]">Explore</a>
    </section>
   `,
   styles: `
