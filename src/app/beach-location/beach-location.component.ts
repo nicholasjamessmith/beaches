@@ -24,13 +24,28 @@ import { RouterModule } from '@angular/router';
   `,
   styles: `
     .beach {
-      border: 2px solid black;
-      border-radius: 4px;
+      border: 2px solid red;
+      max-height: auto;
       padding: 12px;
     }
     .beach-photo {
       max-width: 100%;
       max-height: 100%;
+    }
+    .beach-rank, .beach-heading, a {
+      font-family: "Roboto Condensed", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+    a:link, a:visited {
+      color: blue;
+    }
+    a:hover {
+      color: red;
+    }
+    a:active{
+      color: red
     }
 /*
     .listing {

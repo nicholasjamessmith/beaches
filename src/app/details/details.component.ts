@@ -12,41 +12,57 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
   //templateUrl: './details.component.html',
   //styleUrl: './details.component.css'
   template: `
-    <article>
-      <img
-        class="beach-photo"
-        [src]="beachLocation?.photo"
-        alt="Exterior photo of {{ beachLocation?.name }}"
-        crossorigin
-      />
-      <section class="beach-description">
-        <h2 class="beach-heading">{{ beachLocation?.name }}</h2>
-        <p class="beach-location">Location: {{ beachLocation?.state }}
-      </section>
-      <section class="beach-features">
-        <h2 class="section-heading">About this housing location</h2>
-        <ul>
-          <li>Does this location have easy access: {{ beachLocation?.easyAccess }}</li>
-        </ul>
-      </section>
-      <section class="beach-inquiry">
-        <h2 class="section-heading">Inquire about visiting this beach</h2>
-        <form [formGroup]="inquireForm" (submit)="submitInquiry()">
-          <label for="first-name">First Name</label>
-          <input id="first-name" type="text" formControlName="firstName" />
+    <div class="details">
+      <article>
+        <img
+          class="beach-photo"
+          [src]="beachLocation?.photo"
+          alt="Exterior photo of {{ beachLocation?.name }}"
+          crossorigin
+        />
+        <section class="beach-description">
+          <h2 class="beach-heading">{{ beachLocation?.name }}</h2>
+          <p class="beach-location">Location: {{ beachLocation?.state }}
+        </section>
+        <section class="beach-features">
+          <h2 class="section-heading">About this beach</h2>
+          <ul>
+            <li>Does this location have easy access: {{ beachLocation?.easyAccess }}</li>
+          </ul>
+        </section>
+        <section class="beach-inquiry">
+          <h2 class="section-heading">Inquire about visiting this beach</h2>
+          <form [formGroup]="inquireForm" (submit)="submitInquiry()">
+            <label for="first-name">First Name</label>
+            <input id="first-name" type="text" formControlName="firstName" />
 
-          <label for="last-name">Last Name</label>
-          <input id="last-name" type="text" formControlName="lastName" />
+            <label for="last-name">Last Name</label>
+            <input id="last-name" type="text" formControlName="lastName" />
 
-          <label for="email">E-mail</label>
-          <input id="email" type="email" formControlName="email" />
-          <button type="submit" class="primary">Submit Inquiry</button>
-        </form>
-      </section>
-      <!--<p>Details works! {{ beachLocationRank }}</p>-->
-    </article>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" formControlName="email" />
+            <button type="submit" class="primary">Submit Inquiry</button>
+          </form>
+        </section>
+        <!--<p>Details works! {{ beachLocationRank }}</p>-->
+      </article>
+    </div>
   `,
   styles: `
+    .details {
+      display: flex;
+      justify-content: center;
+      border: 2px solid red;
+    }
+
+    .beach-description, .beach-features, .beach-inquiry, .beach-photo {
+      font-family: "Roboto Condensed", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+      text-align: center;
+      max-width: 600px;
+    }
   `
 })
 export class DetailsComponent {

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BeachLocationComponent } from '../beach-location/beach-location.component';
 import { BeachLocation } from '../beachlocation';
-import { BeachesService } from '../beaches.service'
+import { BeachesService } from '../beaches.service';
 
 
 @Component({
@@ -25,7 +25,15 @@ import { BeachesService } from '../beaches.service'
   //templateUrl: './home.component.html',
   //styleUrl: './home.component.css',
   styles: `
-
+  form { border: 2px solid blue}
+  .results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    margin-top: 50px;
+    justify-content: space-around;
+    }
     `
 
 })

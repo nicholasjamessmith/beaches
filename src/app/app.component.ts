@@ -22,12 +22,12 @@ import { RouterModule } from '@angular/router'
     </main>
   `,
   styles: `
-    h1{
-      color: blue
-      }
     img {
-      width: 25%;
-    }`,
+      max-width: 15%;
+      border: 2px solid blue
+    }
+    
+  `,
   //templateUrl: './app.component.html`
   //styleUrl: './app.component.css'
 
