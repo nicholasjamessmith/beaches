@@ -79,4 +79,11 @@ export class BeachesService {
     return this.beachLocationList.find((beachLocation) => beachLocation.rank === rank);
   }
   constructor() { }
+
+  submitInquiry(firstName: string, lastName: string, email: string) {
+    console.log(
+      `Beaches inquiry received: firstName: ${firstName}, lastName: ${lastName}, email ${email}`
+    );
+  }
+
 }

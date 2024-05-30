@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router'
   //imports: [RouterOutlet],
   template: `
     <main>
-      <a [routerLink]="['/']">
+      <a [routerLink]="['/']" (click)="logoLinkClick()">
       <header>
         <img class="logo" src="assets/logo.png" alt="logo" aria-hidden="true" />
       </header>
@@ -33,5 +33,8 @@ import { RouterModule } from '@angular/router'
 
 })
 export class AppComponent {
+  logoLinkClick() {
+    console.log("Link clicked!")
+  }
   title = 'beaches';
 }

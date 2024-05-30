@@ -12,63 +12,41 @@ import { BeachesService } from '../beaches.service'
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by state" />
-        <button class="primary" type="button">Search</button>
+        <input type="text" placeholder="Filter by state" #filter />
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
     <section class="results">
       <app-beach-location
-        *ngFor="let beachLocation of beachLocationList" [beachLocation]="beachLocation">
+        *ngFor="let beachLocation of filteredBeachList" [beachLocation]="beachLocation">
       </app-beach-location>
     </section>
   `,
   //templateUrl: './home.component.html',
   //styleUrl: './home.component.css',
   styles: `
-    .results {
-      display: grid;
-      column-gap: 14px;
-      row-gap: 14px;
-      grid-template-columns: repeat(auto-fill, minmax(600px, 600px));
-      margin-top: 50px;
-      justify-content: space-around;
-    }
-    input[type="text"] {
-      border: solid 1px var(--primary-color);
-      padding: 10px;
-      border-radius: 8px;
-      margin-right: 4px;
-      display: inline-block;
-      width: 30%;
-    }
-    button {
-      padding: 10px;
-      border: solid 1px var(--primary-color);
-      background: var(--primary-color);
-      color: white;
-      border-radius: 8px;
-    }
-  @media (min-width: 500px) and (max-width: 768px) {
-    .results {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    input[type="text"] {
-        width: 70%;
-    }   
-  }
-  @media (max-width: 499px) {
-    .results {
-        grid-template-columns: 1fr;
-    }    
-  }
+
     `
 
 })
 export class HomeComponent {
   beachLocationList: BeachLocation[] = [];
   beachesService: BeachesService = inject(BeachesService);
-  
+  filteredBeachList: BeachLocation[] = [];
+
+  //This function uses the String filter function to compare the value of the text parameter against the beachLocation.state property. You can update this function to match against any property or multiple properties for a fun exercise.
+  filterResults(text: string) {
+    //console.log("filterResults function executed")
+    if (!text) {
+      this.filteredBeachList = this.beachLocationList;
+      return;
+    }
+
+    this.filteredBeachList = this.beachLocationList.filter((beachLocation) => beachLocation?.state.toLowerCase().includes(text.toLowerCase()),
+    )
+  }
   constructor() {
     this.beachLocationList = this.beachesService.getAllBeachLocations();
+    this.filteredBeachList = this.beachLocationList;
   }
 }
